@@ -1,0 +1,15 @@
+<launch>
+    <arg name="namespace" default="car"/>
+
+    <group ns="$(arg namespace)">
+        <!-- Load robot description -->
+        <include file="$(find rover_description)/launch/description.launch">
+            <arg name="namespace" value="$(arg namespace)"/>
+        </include>
+
+        <!-- Load rviz to display robot -->
+        <include file="$(find rover_description)/launch/rviz.launch">
+            <arg name="namespace" value="$(arg namespace)"/>
+        </include>
+    </group>
+</launch>
