@@ -1,0 +1,23 @@
+<package>
+  <name>rover_simulation</name>
+  <version>0.1.0</version>
+
+  <description>Rover simulation using Gazebo</description>
+  <author>Salah-Eddine Missri</author>
+
+  <maintainer email="missrisalaheddine@gmail.com">Salah-Eddine Missri</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <license>BSD</license>
+
+  <run_depend>ackermann_msgs</run_depend>
+  <run_depend>rover_description</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>xacro</run_depend>
+
+</package>
