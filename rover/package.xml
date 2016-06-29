@@ -1,0 +1,20 @@
+<package>
+  <name>rover</name>
+  <version>0.1.0</version>
+  <description>Rover metapackage</description>
+
+  <author>Salah-Eddine Missri</author>
+  <maintainer email="missrisalaheddine@gmail.com">Salah-Eddine Missri</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rover_description</run_depend>
+  <run_depend>rover_simulation</run_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>
