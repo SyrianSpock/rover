@@ -2,7 +2,7 @@
 
 This project aims to build an autonomous rover using GPS, vision, and inertial sensors for navigation.
 The goal is to run everything onboard an embedded computer running Ubuntu with ROS.
-The rover consists of a modified RC car.
+The rover consists of a rocker-bogie 3D printed rover.
 
 ## Quickstart
 
@@ -14,20 +14,16 @@ roslaunch rover_simulation simulation.launch
 ```
 Robot initial position and terrain are set through arguments passed to the launch file.
 
-To move the robot you can run
-```bash
-rostopic pub /car/ackermann_cmd ackermann_msgs/AckermannDriveStamped \
-    "{'drive':{'steering_angle':10, 'speed':0.3}}" -r 10
-```
+To move the robot you can use the RQT robot steering interface that will stream commands over the `cmd_vel` topic.
 
 ## Documentation
 
 ### Hardware
 
-* RC Car chassis and motors
+* Custom 3D printed rocker-bogie rover structure
 * Processing board: Jetson TK1 board connected to
 * RGBD sensor: Intel Realsense camera R200
-* IMU (accelerometer, gyroscope, magnetometer and barometer) 
+* IMU (accelerometer, gyroscope, magnetometer and barometer)
 * GPS
 
 
