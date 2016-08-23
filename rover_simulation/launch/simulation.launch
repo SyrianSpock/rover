@@ -28,17 +28,7 @@
                     -x $(arg x) -y $(arg y) -z $(arg z)
                     -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
-        <!-- Load the joint controllers. One of these publishes the joint states
-                 to joint_states. -->
-        <node name="controller_spawner" pkg="controller_manager" type="spawner"
-              args="$(find rover_simulation)/config/joint_ctrlr_params.yaml"/>
-
-        <!-- Control the steering, axle, and shock absorber joints. -->
-        <node name="ackermann_controller" pkg="rover_simulation"
-              type="ackermann_controller.py">
-            <param name="cmd_timeout" value="$(arg cmd_timeout)"/>
-            <rosparam file="$(find rover_simulation)/config/ackermann_ctrlr_params.yaml"
-                      command="load"/>
-        </node>
+        <!-- Load the controllers -->
+        <include file="$(find rover_simulation)/launch/control.launch" />
     </group>
 </launch>

@@ -7,17 +7,17 @@
 
   <!-- body_length is measured along the x axis, body_width
        along the y axis, and body_height along the z axis. -->
-  <xacro:property name="body_length"    value="0.350"/>
-  <xacro:property name="body_width"     value="0.200"/>
-  <xacro:property name="body_height"    value="0.100"/>
-  <xacro:property name="body_mass"      value="2.788"/>
+  <xacro:property name="body_length"    value="0.300"/>
+  <xacro:property name="body_width"     value="0.250"/>
+  <xacro:property name="body_height"    value="0.050"/>
+  <xacro:property name="body_mass"      value="3.000"/>
   <xacro:property name="body_clearance" value="0.200"/>
 
   <xacro:property name="wheelbase_rocker" value="0.350"/>
   <xacro:property name="wheelbase_bogie"  value="0.200"/>
   <xacro:property name="x_center_rocker"  value="0.000"/>
   <xacro:property name="x_center_bogie"   value="0.150"/>
-  <xacro:property name="track"            value="0.350"/>
+  <xacro:property name="track"            value="0.400"/>
 
   <!-- hub_dia and tire_dia are the diameters of the hub and tire,
        respectively. hex_hub_depth is the distance that the hex hub is
@@ -111,10 +111,10 @@
     <transmission name="${lr_prefix}_${fr_prefix}_axle_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${lr_prefix}_${fr_prefix}_axle">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
       </joint>
       <actuator name="${lr_prefix}_${fr_prefix}_axle_act">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -252,7 +252,7 @@
   <!-- Depth sensor -->
   <xacro:include filename="$(find rover_description)/urdf/depth_sensor.urdf.xacro" />
   <xacro:depth_sensor name="camera" parent="base_link">
-    <origin xyz="0.15 0.0 0.05" rpy="0 0 0"/>
+    <origin xyz="${body_length / 2 + 0.05} 0.0 ${- body_height / 4}" rpy="0 0 0"/>
   </xacro:depth_sensor>
 
   <!-- IMU sensor-->
