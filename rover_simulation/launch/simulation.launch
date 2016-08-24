@@ -29,6 +29,6 @@
                     -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
         <!-- Load the controllers -->
-        <include file="$(find rover_simulation)/launch/control.launch" />
+        <include file="$(find rover_control)/launch/control.launch" />
     </group>
 </launch>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <name>rover_control</name>
+  <version>0.1.0</version>
+
+  <description>Rover control and localization package</description>
+  <author>Salah-Eddine Missri</author>
+  <maintainer email="missrisalaheddine@gmail.com">Salah-Eddine Missri</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>controller_manager</build_depend>
+  <build_depend>diff_drive_controller</build_depend>
+  <build_depend>joint_state_controller</build_depend>
+  <build_depend>topic_tools</build_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>diff_drive_controller</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>topic_tools</run_depend>
+
+</package>
