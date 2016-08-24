@@ -30,4 +30,5 @@ To move the robot you can use the RQT robot steering interface that will stream 
 ### Software
 The current stack contains the following
 * `rover_description` contains the robot description in URDF
-* `rover_simulation` contains the controller parameters and launcher for simulation in Gazebo
+* `rover_control` contains the controller parameters and localization pipeline
+* `rover_simulation` contains launcher for simulation in Gazebo

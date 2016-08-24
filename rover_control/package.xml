@@ -15,9 +15,11 @@
   <build_depend>diff_drive_controller</build_depend>
   <build_depend>joint_state_controller</build_depend>
   <build_depend>topic_tools</build_depend>
+  <build_depend>robot_localization</build_depend>
   <run_depend>controller_manager</run_depend>
   <run_depend>diff_drive_controller</run_depend>
   <run_depend>joint_state_controller</run_depend>
   <run_depend>topic_tools</run_depend>
+  <run_depend>robot_localization</run_depend>
 
 </package>

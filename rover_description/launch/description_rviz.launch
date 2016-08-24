@@ -1,5 +1,5 @@
 <launch>
-    <arg name="namespace" default="car"/>
+    <arg name="namespace" default="rover"/>
 
     <group ns="$(arg namespace)">
         <!-- Load robot description -->

@@ -1,9 +1,17 @@
 <launch>
-  <rosparam command="load" file="$(find rover_control)/config/control.yaml" />
+    <arg name="namespace" default="rover"/>
 
-  <node name="controller_spawner" pkg="controller_manager" type="spawner"
-        args="rover_joint_publisher rover_velocity_controller --shutdown-timeout 1" />
+    <group ns="$(arg namespace)">
+        <rosparam command="load" file="$(find rover_control)/config/control.yaml" />
 
-  <node pkg="topic_tools" type="relay" name="cmd_vel_relay"
-        args="cmd_vel rover_velocity_controller/cmd_vel" />
+        <node name="controller_spawner" pkg="controller_manager" type="spawner"
+            args="rover_joint_publisher rover_velocity_controller --shutdown-timeout 1" />
+
+        <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+        <rosparam command="load" file="$(find rover_control)/config/robot_localization.yaml" />
+        </node>
+
+        <node pkg="topic_tools" type="relay" name="cmd_vel_relay"
+            args="cmd_vel rover_velocity_controller/cmd_vel" />
+    </group>
 </launch>

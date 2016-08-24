@@ -1,10 +1,10 @@
 <launch>
-    <arg name="namespace" default="car"/>
+    <arg name="namespace" default="rover"/>
 
     <group ns="$(arg namespace)">
         <!-- robot_description is used by nodes that publish to joint_states. -->
         <param name="robot_description"
-               command="$(find xacro)/xacro.py $(find rover_description)/urdf/car.urdf.xacro"/>
+               command="$(find xacro)/xacro.py $(find rover_description)/urdf/rover.urdf.xacro"/>
 
         <!-- Read joint positions from joint_states, then publish the vehicle's
              state to tf. -->

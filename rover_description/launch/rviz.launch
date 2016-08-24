@@ -1,5 +1,5 @@
 <launch>
-    <arg name="namespace" default="car"/>
+    <arg name="namespace" default="rover"/>
     <arg name="gui" default="true" />
     <arg name="rvizconfig" default="$(find rover_description)/rviz/urdf.rviz" />
 
